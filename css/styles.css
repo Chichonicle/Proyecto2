@@ -1,23 +1,29 @@
 
 :root {
-    --psx-border: 0.5em solid #b3b3b3;
-    --psx-width: 33.75em;
-    --psx-height: 22.5em;
+    --psx-border: 0.8em solid #b3b3b3;
     --psx-bgcolor: #e7e7e7;
-}
-
-body{
-    background: blue;
-   
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    margin-top: 4em;
+    --psx-width: 53em;
+    --psx-height: 33em;
+    --psx-controller-width: 18em;
+    --psx-controller-height: 13em;
+  }
   
-}
-
+  body {
+    background: #44a;
+    height: 75vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+  }
 .monitor {
     height: 27em;
     width: 53em;
@@ -40,74 +46,117 @@ body{
     align-items: center;
   }
 
-.play-station-container {
+  .play-station-container {
+    position: relative;
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    z-index: -10;
+  
    
     
-  #dentro {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr 0.85fr;
-    grid-template-rows: 1fr;
-    align-items: center;
+    & .play-station-console-container {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr 0.85fr;
+        grid-template-rows: 1fr;
+        align-items: center;
         width: var(--psx-width);
         height: var(--psx-height);
-        background: #f003;
 
-  }
-           & .boton {
-                border: var(--psx-border);
-                width: 4em;
-                height: 4em;
+ 
+        & .play-station-parte {
+            border: var(--psx-border);
+            background: var(--psx-bgcolor);
+            border-radius: 0.3em;
+            height: 100%;
+
+            & .boton {
+                border: 0.8em solid #b3b3b3;
+                width: 8em;
+                height: 8em;
                 border-radius: 50%;
                 box-shadow: 0 0 0 0.1em #000 inset;
-                background: radial-gradient(at 80% 80%,#949597,#b4b4b4);
+                background: radial-gradient(at 80% 80%, #949597, #b4b4b4);
                 display: flex;
-                align-items: center;
                 justify-content: center;
-            }
+                align-items: center;
 
-               & .reset {
-                    width: 1.5em;
-                    height: 1.5em;
-                    border: 0.3em solid #b3b3b3;
-                }
-
-                & .power {
-                    color: #aec1bc;
-                }
-
-                & .open {
+                &.reset {
+                    font-size: 7px;
+                    transform: translate(-4em, -3em);
+                    width: 35px;
+                    height: 35px;
+                    border: 6px solid #b3b3b3;
+                  }
+          
+                  &.power {
+                    color: #aec1bd;
+                    transform: translate(0, -1.8em);
+                  }
+          
+                  &.abrir {
                     color: #c0d2e6;
+                    transform: translate(0, -1.em);
+                  }
+                }
+                  & .gap {
+                    width: 0.8em;
+                    height: 2em;
+                    background: #a8a8a8;
+                    display: flex;
+                    align-items: flex-end;
+                    position: absolute;
+                }
+        
+              
+                & .led {
+                    &.on {
+                    width: 100%;
+                    height: 70%;
+                    background: #d9fe70;
+                    box-shadow: 0 0.1em 0.2em #93ae61 inset, 0 -2px 0 #414d3f inset;
+                    }
                 }
             
             
 
       
-            .parte-izq{
-            border: var(--psx-border);
-            background: var(--psx-bgcolor);
-            height: 100%;
-            border-radius: 0.4em;
-            
-           }
+                &.izq {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-end;
+                  }
 
-           .parte-der{
-                border: var(--psx-border);
-                background: var(--psx-bgcolor);
-                height: 100%;
-                border-radius: 0.4em;
-
-            
-                
-            }
-           
-            .ps-centro{
-                border: var(--psx-border);
-                background: var(--psx-bgcolor);
-                height: 90%;
-                border-left: 0;
-                border-right: 0;
-               
-
+                  &.der {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-end;
+                  }
                 }
-            
-        }
+           
+                & .play-station-centro {
+                    border: var(--psx-border);
+                    border-left: 0;
+                    border-right: 0;
+                    background: var(--psx-bgcolor);
+                    height: 90%;
+                    position: relative;
+
+                    & .play-station-cd {
+                        width: 28em;
+                        height: 28em;
+                        background: var(--psx-bgcolor);
+                        border-radius: 50%;
+                        border: var(--psx-border);
+                        position: absolute;
+                        transform: translate(-15%, 0);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                      }
+                    }
+                  }
+                }
