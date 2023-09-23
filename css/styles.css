@@ -24,7 +24,7 @@ body{
 .play-station-container {
    
     
-  .ps-dentro {
+  #dentro {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr 0.85fr;
     grid-template-rows: 1fr;
@@ -32,8 +32,35 @@ body{
         width: var(--psx-width);
         height: var(--psx-height);
         background: #f003;
-        
-        
+
+  }
+           & .boton {
+                border: var(--psx-border);
+                width: 4em;
+                height: 4em;
+                border-radius: 50%;
+                box-shadow: 0 0 0 0.1em #000 inset;
+                background: radial-gradient(at 80% 80%,#949597,#b4b4b4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+               & .reset {
+                    width: 1.5em;
+                    height: 1.5em;
+                    border: 0.3em solid #b3b3b3;
+                }
+
+                & .power {
+                    color: #aec1bc;
+                }
+
+                & .open {
+                    color: #c0d2e6;
+                }
+            
+            
 
       
             .parte-izq{
@@ -49,10 +76,11 @@ body{
                 background: var(--psx-bgcolor);
                 height: 100%;
                 border-radius: 0.4em;
+
             
                 
             }
-            }
+           
             .ps-centro{
                 border: var(--psx-border);
                 background: var(--psx-bgcolor);
@@ -62,16 +90,7 @@ body{
                
 
                 }
-            .sombra{
-                    background: #000;
-                    width: 25%;
-                    height: 100%;
-                    position:absolute;
-                    top: 0;
-                    left: 100%;
-                    z-index: -1;
-
-                }
+            
         }
 
     
