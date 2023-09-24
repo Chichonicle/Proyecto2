@@ -15,12 +15,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: -100;
 }
 
 .container {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
+  position: relative;
+  z-index: -100;
 }
 .monitor {
   height: 27em;
@@ -95,6 +99,7 @@ body {
           transform: translate(0, -1em);
         }
       }
+
       & .luz {
         width: 0.8em;
         height: 2em;
@@ -239,6 +244,10 @@ body {
     }
   }
 }
+.flecha:hover {
+  transform: scale(1);
+  border: 0.2em solid rgba(14, 6, 6, 0.219);
+}
 
 & .control-derecha {
   right: -2.5em;
@@ -280,6 +289,10 @@ body {
       }
     }
   }
+}
+.boton:hover {
+  transform: scale(1);
+  border: 0.2em solid rgba(14, 6, 6, 0.219);
 }
 
 & .control-gatillo-botones {
@@ -395,4 +408,9 @@ body {
     border-radius: 50%;
     background: #656569;
   }
+}
+
+.mando-joystick-boton:active {
+  transform: translate(4px, 8px);
+ 	 
 }
