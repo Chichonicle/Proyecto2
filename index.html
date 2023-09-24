@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Station 1</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link href="./css/styles.css" rel="stylesheet">
 
 
 </head>
 <body>
-    <div class="container">
 
-        <div class="monitor">
-            <div class="tele"></div>
-        </div>
+  
+  <div class="container">
+    <div class="monitor">
+      <div class="tele" id="screen"></div>
+  </div>
 
         <div class="mando-estructura">
             <div class="mando-estructura-dentro">
@@ -42,7 +43,7 @@
                 <div class="control-derecha">
                   <div class="grupo-botones">
                     <div></div>
-                    <div class="boton triangulo">△</div>
+                    <div class="boton triangulo" id="triangulo">△</div>
                     <div></div>
                     <div class="boton circulo">◯</div>
                     <div></div>
@@ -67,7 +68,7 @@
             <div class="play-station-console-container">
               <div class="play-station-parte izq">
                 <div class="boton reset">RESET</div>
-                <div class="boton power">POWER</div>
+                <div class="boton power" id="idpower">POWER</div>
                 <div class="luz">
                   <div class="led on"></div>
                 </div>
@@ -83,13 +84,7 @@
                 <div class="boton abrir">OPEN</div>
               </div>
             </div>
-        
-
-    
-    
-
-
-
-    <script src="js/main.js"></script>
+         
+        <script src="./js/main.js"></script>
 </body>
 </html>
