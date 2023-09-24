@@ -1,162 +1,398 @@
-
 :root {
-    --psx-border: 0.8em solid #b3b3b3;
-    --psx-bgcolor: #e7e7e7;
-    --psx-width: 53em;
-    --psx-height: 33em;
-    --psx-controller-width: 18em;
-    --psx-controller-height: 13em;
-  }
-  
-  body {
-    background: #44a;
-    height: 75vh;
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    
-  }
+  --psx-border: 0.8em solid #b3b3b3;
+  --psx-bgcolor: #e7e7e7;
+  --psx-width: 53em;
+  --psx-height: 33em;
+  --psx-mando-width: 18em;
+  --psx-mando-height: 13em;
+}
+
+body {
+  background: #44a;
+  height: 75vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
 .monitor {
-    height: 27em;
-    width: 53em;
-    display: flex;
-    background-color: rgb(0, 0, 0);
-    align-items: center;
-    margin: 5em;
-    justify-content: center;
-    border-radius: 1.5em;
-  }
-  .tele {
-    border-radius: 2em;
-    border-color: #00aa9e;
-    height: 24em;
-    width: 50em;
-    background-color: #6660602a;
-    box-shadow: rgba(0, 0, 0, 0.315) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  height: 27em;
+  width: 53em;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  margin: 5em;
+  justify-content: center;
+  border-radius: 1.5em;
+}
+.tele {
+  border-radius: 2em;
+  border-color: #00aa9e;
+  height: 24em;
+  width: 50em;
+  background-color: #6660602a;
+  box-shadow: rgba(0, 0, 0, 0.315) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .play-station-container {
-    position: relative;
-    font-family: Montserrat, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    z-index: -10;
-  
-   
-    
-    & .play-station-console-container {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr 0.85fr;
-        grid-template-rows: 1fr;
+.play-station-container {
+  position: relative;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  z-index: -10;
+
+  & .play-station-console-container {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr 0.85fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: var(--psx-width);
+    height: var(--psx-height);
+
+    & .play-station-parte {
+      border: var(--psx-border);
+      background: var(--psx-bgcolor);
+      border-radius: 0.3em;
+      height: 100%;
+
+      & .boton {
+        border: 0.8em solid #b3b3b3;
+        width: 8em;
+        height: 8em;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.1em #000 inset;
+        background: radial-gradient(at 80% 80%, #949597, #b4b4b4);
+        display: flex;
+        justify-content: center;
         align-items: center;
-        width: var(--psx-width);
-        height: var(--psx-height);
 
- 
-        & .play-station-parte {
-            border: var(--psx-border);
-            background: var(--psx-bgcolor);
-            border-radius: 0.3em;
-            height: 100%;
+        &.reset {
+          font-size: 7px;
+          transform: translate(-4em, -3em);
+          width: 35px;
+          height: 35px;
+          border: 6px solid #b3b3b3;
+        }
 
-            & .boton {
-                border: 0.8em solid #b3b3b3;
-                width: 8em;
-                height: 8em;
-                border-radius: 50%;
-                box-shadow: 0 0 0 0.1em #000 inset;
-                background: radial-gradient(at 80% 80%, #949597, #b4b4b4);
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        &.power {
+          color: #aec1bd;
+          transform: translate(0, -1.8em);
+        }
 
-                &.reset {
-                    font-size: 7px;
-                    transform: translate(-4em, -3em);
-                    width: 35px;
-                    height: 35px;
-                    border: 6px solid #b3b3b3;
-                  }
-          
-                  &.power {
-                    color: #aec1bd;
-                    transform: translate(0, -1.8em);
-                  }
-          
-                  &.abrir {
-                    color: #c0d2e6;
-                    transform: translate(0, -1.em);
-                  }
-                }
-                  & .gap {
-                    width: 0.8em;
-                    height: 2em;
-                    background: #a8a8a8;
-                    display: flex;
-                    align-items: flex-end;
-                    position: absolute;
-                }
-        
-              
-                & .led {
-                    &.on {
-                    width: 100%;
-                    height: 70%;
-                    background: #d9fe70;
-                    box-shadow: 0 0.1em 0.2em #93ae61 inset, 0 -2px 0 #414d3f inset;
-                    }
-                }
-            
-            
+        &.abrir {
+          color: #c0d2e6;
+          transform: translate(0, -1em);
+        }
+      }
+      & .luz {
+        width: 0.8em;
+        height: 2em;
+        background: #a8a8a8;
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+      }
 
-      
-                &.izq {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: flex-end;
-                  }
+      & .led {
+        &.on {
+          width: 100%;
+          height: 70%;
+          background: #d9fe70;
+          box-shadow: 0 0.1em 0.2em #93ae61 inset, 0 -2px 0 #414d3f inset;
+        }
+      }
 
-                  &.der {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: flex-end;
-                  }
-                }
-           
-                & .play-station-centro {
-                    border: var(--psx-border);
-                    border-left: 0;
-                    border-right: 0;
-                    background: var(--psx-bgcolor);
-                    height: 90%;
-                    position: relative;
+      &.izq {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+      }
 
-                    & .play-station-cd {
-                        width: 28em;
-                        height: 28em;
-                        background: var(--psx-bgcolor);
-                        border-radius: 50%;
-                        border: var(--psx-border);
-                        position: absolute;
-                        transform: translate(-15%, 0);
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        align-items: center;
-                      }
-                    }
-                  }
-                }
+      &.der {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+
+    & .play-station-centro {
+      border: var(--psx-border);
+      border-left: 0;
+      border-right: 0;
+      background: var(--psx-bgcolor);
+      height: 90%;
+      position: relative;
+
+      & .play-station-cd {
+        width: 28em;
+        height: 28em;
+        background: var(--psx-bgcolor);
+        border-radius: 50%;
+        border: var(--psx-border);
+        position: absolute;
+        transform: translate(-15%, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.mando-estructura {
+  width: var(--psx-mando-width);
+  height: var(--psx-mando-height);
+  display: flex;
+  justify-content: center;
+  transform: translateY(5em);
+  z-index: -5;
+
+  & .mando-estructura-dentro {
+    display: flex;
+    align-items: center;
+    width: calc(0.8 * var(--psx-mando-width));
+    height: calc(0.6 * var(--psx-mando-height));
+
+    & .mando-control {
+      display: grid;
+      grid-template-columns: 0.7fr 1.4fr 0.7fr;
+      width: 100%;
+      height: 60%;
+      background: var(--psx-bgcolor);
+      border: var(--psx-border);
+      position: relative;
+    }
+  }
+}
+
+& .control-izquierda,
+& .control-derecha {
+  border: var(--psx-border);
+  width: 5em;
+  height: 5em;
+  background: var(--psx-bgcolor);
+  border-radius: 50%;
+  position: absolute;
+  top: -1em;
+  z-index: 5;
+}
+
+& .control-izquierda {
+  left: -2.4em;
+
+  & .control-flechas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .flechas {
+      position: relative;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: repeat(3, 1em);
+      grid-template-rows: repeat(3, 1em);
+
+      &::before {
+        content: "";
+        display: block;
+        background: #d9d9d9;
+        width: 3em;
+        height: 1em;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        background: #d9d9d9;
+        width: 1em;
+        height: 3em;
+        position: absolute;
+        left: 31%;
+        z-index: -1;
+      }
+
+      & .flecha {
+        background: #656569;
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+}
+
+& .control-derecha {
+  right: -2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .grupo-botones {
+    display: grid;
+    grid-template-columns: repeat(3, 1.4em);
+    grid-template-rows: repeat(3, 1.4em);
+
+    & .boton {
+      color: var(--color);
+      background: #646669;
+      border-radius: 50%;
+      font-size: 16px;
+      width: 1.6em;
+      height: 1.6em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 0.3em #0008;
+
+      &.triangulo {
+        --color: #2cab73;
+      }
+
+      &.cuadrado {
+        --color: #dbafdb;
+      }
+
+      &.circulo {
+        --color: #df6a75;
+      }
+
+      &.x {
+        --color: #29aee8;
+      }
+    }
+  }
+}
+
+& .control-gatillo-botones {
+  border: var(--psx-border);
+  border-width: 0.4em;
+  background: var(--psx-bgcolor);
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: -2em;
+  z-index: -1;
+  border-radius: 40% 40% 0% 0% / 65% 65% 0% 0%;
+
+  &.izquierda {
+    left: -0.8em;
+  }
+
+  &.derecha {
+    right: -0.8em;
+  }
+}
+
+& .base-gatillo {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 2em;
+  height: 1.2em;
+  background: #656569;
+  border-radius: 40% 40% 0% 0%;
+  transform: translateY(-2.5em);
+  z-index: -2;
+
+  &.izquierda {
+    left: -0.3em;
+  }
+
+  &.derecha {
+    right: -0.3em;
+  }
+}
+
+& .control-gatillo-botones {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 2em;
+  height: 1.2em;
+  background: #656569;
+  border-radius: 40% 40% 0% 0%;
+  transform: translateY(-2.5em);
+  z-index: -2;
+
+  &.left {
+    left: -0.3em;
+  }
+
+  &.right {
+    right: -0.3em;
+  }
+}
+
+& .mando-base {
+  width: 4.5em;
+  height: 8em;
+  position: absolute;
+  border: var(--psx-border);
+  background: var(--psx-bgcolor);
+  border-radius: 50% 50% 35% 35% / 25% 25% 65% 65%;
+  transform: rotate(var(--rotate-z));
+  z-index: 0;
+
+  &.izquierda {
+    --rotate-z: 20deg;
+
+    left: -3.2em;
+  }
+
+  &.derecha {
+    --rotate-z: -20deg;
+
+    right: -3.2em;
+  }
+}
+
+& .mando-joystick {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  border: var(--psx-border);
+  border-width: 0.3em;
+  background: var(--psx-bgcolor);
+  position: absolute;
+  bottom: -2em;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.izquierda {
+    left: 1.7em;
+  }
+
+  &.derecha {
+    right: 1.7em;
+  }
+
+  & .mando-joystick-boton {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background: #656569;
+  }
+}
