@@ -1,11 +1,12 @@
 :root {
   --psx-border: 0.8em solid #b3b3b3;
-  --psx-bgcolor: #e7e7e7;
+  --psx-bgcolor: #d3cfce;
   --psx-width: 53em;
   --psx-height: 33em;
   --psx-mando-width: 18em;
   --psx-mando-height: 13em;
 }
+
 
 body {
   background: #44a;
@@ -48,6 +49,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+#screen {
+  width: 95%;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 .play-station-container {
   position: relative;
@@ -113,7 +122,7 @@ body {
         &.on {
           width: 100%;
           height: 70%;
-          background: #d9fe70;
+          background: red;
           box-shadow: 0 0.1em 0.2em #93ae61 inset, 0 -2px 0 #414d3f inset;
         }
       }
@@ -240,6 +249,8 @@ body {
         background: #656569;
         width: 1em;
         height: 1em;
+        rotate: 45deg;
+        border-radius: 20%  0% 20% 00%;
       }
     }
   }
